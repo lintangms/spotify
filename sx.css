@@ -1,0 +1,152 @@
+body{
+    display: flex;
+    height: 200vh;
+    background: -webkit-linear-gradient(
+        to top,
+        rgb(0, 0, 0),
+        rgb(32, 111, 0)
+    );
+    background: linear-gradient(
+        to top,
+        rgb(0, 0, 0),
+        rgb(0, 170, 255)
+    );
+}
+.player{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: 50vh;
+}
+.wrapper{
+    width: 400px;
+    border-radius: 15px;
+    padding: 90px 30px;
+    background-color: white;
+    box-shadow: 0px 6px 16px var(--lightbshadow);
+}
+.wrapper i{
+    cursor: pointer;
+}
+.top, .progress_area .timer, .controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.top i{
+    font-size: 30px;
+    color: var(--lightblack)
+}
+.img1{
+    height: 256px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px var(--lightbshadow);
+}
+.img1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.song_details{
+    text-align: center;
+    margin: 10px 0;
+}
+.song_details .name{
+    font-size: 21px;
+}
+.song_details .artist{
+    font-size: 18px;
+}
+.progress_area{
+    height: 6px;
+    width: 100%;
+    background: gainsboro;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.progress_area .progress_bar{
+    height: inherit;
+    width: 50%;
+    border-radius: inherit;
+    position: relative;
+    background: red;
+}
+.progress_bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: black;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.progress_area:hover .progress_bar::before{
+    opacity: 1;
+}
+.progress_area .timer{
+    margin-top: 2px;
+}
+.timer span{
+    font-size: 13px;
+    color: var(--lightblack);
+}
+.controls{
+    margin: 40px 0 5px 0;
+}
+.controls i{
+    font-size: 28px;
+    user-select: none;
+    background: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+.controls i:nth-child(2),
+.controls i:nth-child(4){
+    font-size: 43px;
+}
+.controls #prev{
+    margin-right: -13px;
+}
+.controls #next{
+    margin-left: -13px;
+}
+.controls .play-pause{
+    height: 54px;
+    width: 54px;
+    background: linear-gradient(blue, red);
+    box-shadow: 0px 0px 5px var(--pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play-pause::before{
+    content: "";
+    position: absolute;
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: black;
+}
+.play-pause i{
+    height: 43px;
+    width: 43px;
+    line-height: 43px;
+    text-align: center;
+    border-radius: inherit;
+    background-clip: text;
+    background: inherit;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
